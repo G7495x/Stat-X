@@ -511,6 +511,7 @@ public void update(){
 	netD.calcPercent(netMax);
 	netU.calcPercent(netMax);
 
+	/*
 	op+="\nDownload rate:"+String.format("%.2f",netD.top())+"kB/s\n";
 	op+="Upload rate:"+String.format("%.2f",netU.top())+"kB/s\n";
 
@@ -518,6 +519,7 @@ public void update(){
 	op+="Total data uploaded on wifi:"+String.format("%.2f",(wifiUByte[now])/1000000.0)+"MB\n";
 	op+="Total data downloaded on mobile data:"+String.format("%.2f",mobDByte[now]/1000000.0)+"MB\n";
 	op+="Total data uploaded on mobile data:"+String.format("%.2f",mobUByte[now]/1000000.0)+"MB\n";
+	*/
 
 	old=now;
 	now=++now%2;
