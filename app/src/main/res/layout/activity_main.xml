@@ -1,0 +1,204 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:textColor="@color/bluish_white"
+    android:layerType="hardware"
+	android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/background"/>
+
+    <com.g7495x.stat_x.SquareLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="32"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cores"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="11"
+                android:gravity="center|end"
+                android:text="CPU"
+                android:textSize="8sp"/>
+
+            <com.g7495x.stat_x.BlendedLineChartView
+                android:id="@+id/cpugraph"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="32"
+                android:layerType="hardware"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="11"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11"/>
+
+    </com.g7495x.stat_x.SquareLayout>
+
+    <com.g7495x.stat_x.SquareLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="35"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="16"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="29"/>
+
+            <com.g7495x.stat_x.BlendedLineChartView
+                android:id="@+id/memgraph"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="16"
+                android:layerType="hardware"/>
+
+            <TextView
+                android:id="@+id/mem"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"
+                android:gravity="center|top"
+                android:text="Mem"
+                android:textSize="8sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+
+    </com.g7495x.stat_x.SquareLayout>
+
+    <RelativeLayout
+        android:id="@+id/netBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/main"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <com.db.chart.view.LineChartView
+            android:id="@+id/netgraph"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/netgraphedge"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/peak"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_above="@+id/netBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:gravity="start"
+        android:text="Peak 0kB/s"
+        android:textSize="12sp"/>
+
+    <LinearLayout
+        android:id="@+id/netStats"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_above="@+id/netBar"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+		android:layout_marginBottom="1dp"
+        android:gravity="end|center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/down"/>
+
+        <TextView
+            android:id="@+id/dRate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginEnd="3dp"
+            android:gravity="center"
+            android:text="0.00kB/s"
+            android:textSize="12sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/up"/>
+
+        <TextView
+            android:id="@+id/uRate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginEnd="3dp"
+            android:gravity="center"
+            android:text="0.00kB/s"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/procs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/netBar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+</RelativeLayout>
