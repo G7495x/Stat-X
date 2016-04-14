@@ -6,7 +6,6 @@
     android:background="#000000"
     android:textColor="@color/bluish_white"
     android:layerType="hardware"
-	android:keepScreenOn="true"
     tools:context=".MainActivity">
 
     <ImageView
