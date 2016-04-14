@@ -264,7 +264,7 @@ void frontend(){
 	cores.setText("CPU\n"+n+" Cores");
 
 	cpugraph=(BlendedLineChartView)findViewById(R.id.cpugraph);
-	cpugraph.setOverlayResource(R.drawable.diamondblue,size.x*16/27,size.x*16/27);  //Dimensions of the diamond(px)
+	cpugraph.setOverlayResource(R.drawable.diamondblue,size.x*16/27,(size.x+1)*16/27);  //Dimensions of the diamond(px)
 	cpugraph.setTextSize(48);
 
 	len=cpu[0].logLen;
