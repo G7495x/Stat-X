@@ -19,7 +19,7 @@
 			android:layout_height="wrap_content"
 			android:text="App Name"
 			android:textColor="@color/bluish_white"
-			android:textSize="20sp"/>
+			android:textSize="19sp"/>
 
 		<TextView
 			android:id="@+id/pName"
